@@ -9,6 +9,13 @@ interface TravelGroup {
   description: string;
 }
 
+interface PageProps {
+  params: {
+    destination: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
 const travelGroups: TravelGroup[] = [
   { id: 'solo', name: 'Solo', description: 'Traveling alone' },
   { id: 'couple', name: 'Couple', description: 'Romantic getaway' },
@@ -16,7 +23,7 @@ const travelGroups: TravelGroup[] = [
   { id: 'friends', name: 'Friends', description: 'Trip with friends' }
 ];
 
-export default function StepsPage({ params }: { params: { destination: string } }) {
+export default function StepsPage({ params, searchParams }: PageProps) {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
