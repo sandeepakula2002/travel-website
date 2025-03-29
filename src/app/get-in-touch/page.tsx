@@ -60,7 +60,7 @@ export default function GetInTouch() {
     } catch (error) {
       setSubmitStatus({
         type: 'error',
-        message: 'Something went wrong. Please try again.'
+        message: error instanceof Error ? error.message : 'Something went wrong. Please try again.'
       });
     } finally {
       setIsSubmitting(false);

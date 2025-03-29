@@ -166,7 +166,7 @@ export default function StepsPage({ params }: { params: { destination: string } 
             <h2 className="text-2xl font-semibold">Congratulations!</h2>
             <p className="text-gray-600">
               Your {formData.days}-day trip to {params.destination} has been configured.
-              We'll be in touch with your personalized itinerary soon!
+              We&apos;ll be in touch with your personalized itinerary soon!
             </p>
           </div>
         );

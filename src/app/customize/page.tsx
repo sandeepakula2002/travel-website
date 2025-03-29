@@ -30,7 +30,6 @@ const tagColors = {
 
 export default function CustomizePage() {
   const [search, setSearch] = useState('');
-  const [selectedDestination, setSelectedDestination] = useState<string | null>(null);
   const router = useRouter();
 
   const filteredDestinations = destinations.filter(dest =>
@@ -38,7 +37,6 @@ export default function CustomizePage() {
   );
 
   const handleDestinationSelect = (destination: string) => {
-    setSelectedDestination(destination);
     router.push(`/customize/${destination.toLowerCase()}/steps`);
   };
 
@@ -47,7 +45,7 @@ export default function CustomizePage() {
       <div className="max-w-4xl mx-auto py-12 px-4">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">
-            What's <span className="text-emerald-500">your pick</span> for your next vacation?
+            What&apos;s <span className="text-emerald-500">your pick</span> for your next vacation?
           </h1>
         </div>
 
